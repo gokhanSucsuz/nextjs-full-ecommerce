@@ -17,16 +17,16 @@ const Header = () => {
 	}
 
 	return (
-		<header className="flex flex-wrap justify-between items-center px-4 py-2">
-			<div className="flex flex-wrap flex-1 w-full justify-between items-center gap-2">
-				<div className="flex flex-wrap  justify-between items-center gap-2">
+		<header className="flex px-4 py-2">
+			<div className="flex flex-col md:flex-row flex-wrap w-full justify-between items-center space-x-6">
+				<div className="flex flex-col md:flex-row md:flex-1 justify-center md:justify-between flex-wrap w-full items-center gap-2 p-2">
 					<Link
 					href="/"
-					className="text-2xl font-bold text-blue-500 hover:opacity-50 cursor-pointer mx-auto sm:mx-0"
+					className="flex text-lg md:text-lg lg:text-xl font-bold text-blue-500 hover:opacity-50 cursor-pointer mx-auto sm:mx-0"
 				>
 					GreatBazaar
 				</Link>
-				<form action={"/search"} className="relative flex gap-2 flex-wrap sm:flex-nowrap items-center justify-center text-xs sm:text-sm min-w-36">
+				<form action={"/search"} className="relative flex gap-2 flex-wrap sm:flex-1 items-center justify-center text-xs sm:text-sm max-w-96 sm:w-full md:max-w-full">
 					<input name="query"
 						type="text"
 						placeholder="Search..."
@@ -47,26 +47,30 @@ const Header = () => {
 					<Button  type="submit" className="absolute top-0 right-0 sm:w-auto h-full p-2 ">Search</Button>
 				</form>
 				</div>
-				<div className="flex justify-center gap-1 items-center space-x-4 mt-4 sm:mt-0 flex-1 sm:flex-none flex-wrap">
-					<Link href="/basket" className="flex-1 flex justify-center sm:justify-start sm:flex-none items-center space-x-2 bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+				<div className="flex flex-col sm:flex-row justify-center md:justify-end gap-1 items-center  mt-4 sm:mt-0">
+					<Link href="/basket" className="w-36 flex justify-center sm:justify-start sm:flex-none items-center  bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
 						<TrolleyIcon className="w-6 h-6"/>
 					<span>My Basket</span>
 					</Link>
 
 					{/* User area */}
-					<ClerkLoaded>
-						<SignedIn>
-							<Link href="/orders"
-								className="flex-1 flex justify-center sm:justify-start sm:flex-none items-center space-x-2 bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
+					<div className="flex flex-col sm:flex-row items-center justify-center gap-2 space-x-2 ">
+						<ClerkLoaded>
+							<div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+							<SignedIn>
+								<Link href="/orders"
+								className="w-36 flex justify-center sm:justify-start sm:flex-none items-center space-x-2 bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 								>
 									<PackageIcon className="w-6 h-6" />
 									<span>My Orders</span>
 								</Link>
-						</SignedIn>
+							</SignedIn>
+						
 
-						{
+							<div className="flex w-36 justify-center items-center">
+														{
 							user ? (
-								<div className="flex items-center space-x-2">
+								<div className="flex flex-col sm:flex-row items-center space-x-2">
 									<UserButton />
 									<div className="hidden sm:block text-xs">
 										<p className="text-gray-400">Welcome Back!
@@ -78,7 +82,7 @@ const Header = () => {
 
 								</div>
 							) : (
-									<div className="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+									<div className=" flex justify-center sm:justify-start sm:flex-none items-center space-x-2 bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
 										<SignInButton mode="modal" />
 								</div>
 							)
@@ -91,7 +95,10 @@ const Header = () => {
 								>Create Passkey</Button>
 							)
 						}
-					</ClerkLoaded>
+							</div>
+							</div>			
+						</ClerkLoaded>
+					</div>
 				</div>
 			</div>
 		</header>
