@@ -1,4 +1,4 @@
-import { BasketIcon, CreditCardIcon, icons } from "@sanity/icons";
+import { CreditCardIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
 export const salesType = defineType({
