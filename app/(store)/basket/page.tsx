@@ -1,5 +1,5 @@
 "use client";
-import { Metadata } from "@/actions/createCheckoutSession";
+import { createCheckoutSession, Metadata } from "@/actions/createCheckoutSession";
 import AddToBasketButton from "@/components/AddToBasketButton";
 import Loader from "@/components/Loader";
 import { Button } from "@/components/ui/button";
@@ -28,8 +28,8 @@ const BasketPage = () => {
         try {
             const metadata: Metadata = {
                 orderNumber:crypto.randomUUID(),
-                customerNumber: user?.fullName ?? "unknown",
-                cutomerEmail: user?.emailAddresses[0].emailAddress ?? "unknown",
+                customerName: user?.fullName ?? "unknown",
+                customerEmail: user?.emailAddresses[0].emailAddress ?? "unknown",
                 clerkUserId: user!.id
             }
             const checkoutUrl = await createCheckoutSession(groupedItems, metadata);
