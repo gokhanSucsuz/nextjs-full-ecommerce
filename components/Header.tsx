@@ -4,7 +4,6 @@ import { ClerkLoaded, SignedIn, SignInButton, UserButton, useUser } from "@clerk
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { PackageIcon, TrolleyIcon } from "@sanity/icons";
-import { useStore } from "zustand";
 import useBasketStore from "@/store";
 
 const Header = () => {

@@ -1,4 +1,3 @@
-import ProductGrid from "@/components/products/ProductGrid";
 import ProductView from "@/components/products/ProductView";
 import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
 import { getProductsByCategory } from "@/sanity/lib/products/getProductsByCategory";
