@@ -8,7 +8,7 @@ import Stripe from "stripe";
 export async function POST(req: NextRequest) {
 	const body = await req.text();
 	const headersList = await headers();
-	const sig = headersList.get("Stripe-Signature");
+	const sig = headersList.get("stripe-signature");
 
 	if (!sig) {
 		return NextResponse.json({ error: "Missing signature" }, { status: 400 });
@@ -87,8 +87,8 @@ async function createOrderInSanity(session: Stripe.Checkout.Session) {
         stripePaymentIntentId: payment_intent,
         customerName,
         stripeCustomerId: customer,
-        clerkUserId: clerkUserId,
-        customerEmail: customerEmail,
+        clerkUserId:clerkUserId,
+        email:customerEmail,
         currency,
         amountDiscount: total_details?.amount_discount ? 
             total_details.amount_discount / 100 : 0,

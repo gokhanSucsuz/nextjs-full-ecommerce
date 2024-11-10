@@ -3,7 +3,7 @@ import { sanityFetch } from "../live";
 
 export async function getMyOrders(userId: string) {
 	if (!userId) throw new Error("User ID is required!");
-
+	console.log(" User ID => ", userId);
 	const MY_ORDERS_QUERY = defineQuery(`*[ _type=="order" && clerkUserId == $userId] | order(orderDate desc){
         ...,
         products[]{
@@ -19,7 +19,7 @@ export async function getMyOrders(userId: string) {
 				userId
 			}
 		});
-		return orders.data;
+		return orders.data || [];
 	} catch (error) {
 		console.log("Error fetching orders: ", error);
 		throw new Error("Error fetching orders");
