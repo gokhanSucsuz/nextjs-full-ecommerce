@@ -21,7 +21,7 @@ const ProductPage = async ({
 
 	const isOutOfStock = product.stock != null && product.stock <= 0;
 	return (
-		<div className="container mx-auto px-4 py-8">
+		<div className="container mx-auto px-4 py-8 bg-white text-gray-800 dark:bg-gray-600 dark:text-gray-50">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div
 					className={`relative aspect-square overflow-hidden rounded-lg shadow-lg ${isOutOfStock
@@ -36,8 +36,8 @@ const ProductPage = async ({
 							className="object-contain transition-transform duration-300 hover:scale-105"
 						/>}
 					{isOutOfStock &&
-						(<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-							<span className="text-white font-bold text-lg">Out of Stock</span>
+						(<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 ">
+							<span className="text-white dark:text-gray-50 font-bold text-lg">Out of Stock</span>
 						</div>)}
                 </div>
                 <div className="flex flex-col justify-between">
@@ -46,7 +46,7 @@ const ProductPage = async ({
                         <div className="text-xl font-semibold mb-4">
                             ${product.price?.toFixed(2)}
                         </div>
-                        <div className="prose max-w-none mb-6">
+                        <div className="prose max-w-none mb-6 dark:text-gray-300">
                             {Array.isArray(product.description) && (
                                 <PortableText value={product.description} />
                             )

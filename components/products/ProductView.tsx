@@ -8,8 +8,7 @@ interface ProductsViewProps {
 	categories: Category[];
 }
 const ProductView = ({ products, categories }: ProductsViewProps) => {
-	return (
-		<div className="flex flex-col">
+	return <div className="flex flex-col dark:bg-gray-600 dark:text-white">
 			<div className="w-full sm:w-[200px]">
 				{/* categories */}
 				<CategorySelectorComponent categories={categories} />
@@ -24,8 +23,7 @@ const ProductView = ({ products, categories }: ProductsViewProps) => {
 					</div>
 				</div>
 			</div>
-		</div>
-	);
+		</div>;
 };
 
 export default ProductView;

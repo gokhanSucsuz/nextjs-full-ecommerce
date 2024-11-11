@@ -9,7 +9,7 @@ const ProductThumb = ({ product }: { product: Product }) => {
 	return (
 		<Link
 			href={`/product/${product.slug?.current}`}
-			className={`group flex flex-col bg-white rounded-lg border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden ${isOutOfStock ? "opacity-50" : ""}`}
+			className={`group flex flex-col bg-white rounded-lg border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden ${isOutOfStock ? "opacity-50" : ""} dark:bg-gray-600 dark:text-white`}
 		>
 			<div className="relative aspect-square w-full h-full overflow-hidden">
 				{product.image && (
@@ -29,11 +29,11 @@ const ProductThumb = ({ product }: { product: Product }) => {
 				)}
 			</div>
 			<div className="p-4">
-				<h2 className="text-lg font-semibold text-gray-800 truncate">
+				<h2 className="text-lg font-semibold dark:text-gray-50 text-gray-800 truncate">
 					{product.name}
 				</h2>
 			</div>
-			<p className="mt-2 text-sm text-gray-600 line-clamp-2 truncate p-4 mr-6">
+			<p className="mt-2 text-sm text-gray-600 dark:text-gray-50 line-clamp-2 truncate p-4 mr-6">
 				{product.description?.map((block) =>
 					block._type === "block" ?
 						block.children?.map((child) =>
@@ -41,7 +41,7 @@ const ProductThumb = ({ product }: { product: Product }) => {
 				)}
 			</p>
 			<span className="indent-3 py-3">
-				{product.price && <span className="text-lg font-bold text-gray-800">${product.price}</span>}
+				{product.price && <span className="text-lg font-bold text-gray-800 dark:text-gray-50">${product.price}</span>}
 			</span>
 			</Link>
 	);

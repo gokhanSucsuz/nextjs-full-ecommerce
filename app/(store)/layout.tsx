@@ -31,7 +31,7 @@ export default function RootLayout({
     <ClerkProvider dynamic>
     <html lang="en" suppressHydrationWarning>
       <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-600 dark:text-gray-200`}
           suppressHydrationWarning
         >
           <ThemeProvider

@@ -37,18 +37,18 @@ const Header = () => {
 	},[])
 	return (
 		<header className="flex px-4 py-2">
-			<ModeToggle/>
 			<div className="flex flex-col md:flex-row flex-wrap w-full justify-between items-center space-x-6">
 				<div className="flex flex-col md:flex-row md:flex-1 justify-center md:justify-between flex-wrap w-full items-center gap-2 p-2">
-					<div className="flex justify-between w-full sm:w-fit">
+					<div className="flex justify-between gap-4 w-full sm:w-fit">
 					<Link
 					href="/"
-					className="flex items-center text-lg md:text-lg lg:text-xl font-bold text-green-500 hover:opacity-50 cursor-pointer mx-auto sm:mx-0"
-				>
+					className="flex items-center justify-between gap-2 w-full lg:w-full text-lg md:text-lg lg:text-xl font-bold text-green-500 hover:opacity-50 cursor-pointer mx-auto sm:mx-0"
+						>
+							<ModeToggle/>
 					Great e-Bazaar
 					</Link>
 						{open && <Sheet key="left">
-							<SheetTrigger asChild className="flex sm:hidden cursor-pointer ">
+							<SheetTrigger asChild className="flex sm:hidden cursor-pointer items-center mt-2 ">
 								<HamburgerMenuIcon className="w-6 h-6" />
   							</SheetTrigger>
 							<SheetContent side="left">

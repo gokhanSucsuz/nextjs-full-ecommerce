@@ -54,8 +54,8 @@ const BasketPage = () => {
 	if (groupedItems.length === 0) {
 		return (
 			<div className="container mx-auto p-4 flex flex-col items-center justify-center min-h-[50vh] ">
-				<h1 className="text-2xl font-bold mb-6 text-gray-800">Your Basket</h1>
-				<p className="text-gray-600 text-lg">Your basket is empty.</p>
+				<h1 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Your Basket</h1>
+				<p className="text-gray-600 dark:text-white text-lg">Your basket is empty.</p>
 			</div>
 		);
 	}
@@ -97,7 +97,7 @@ const BasketPage = () => {
 						</div>
 					)}
                 </div>
-                <div className="w-full lg:w-800 lg:sticky lg:top-4 h-fit bg-white p-6 border rounded order-first lg:order-last fixed bottom-0 left-0 lg:left-auto">
+                <div className="w-full lg:w-800 lg:sticky lg:top-4 h-fit bg-white dark:bg-gray-400 p-6 border rounded order-first lg:order-last fixed bottom-0 left-0 lg:left-auto">
                     <h3 className="text-xl font-semibold">Order Summary</h3>
                     <div className="mt-4 space-y-2">
                         <p className="flex justify-between">

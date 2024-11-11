@@ -21,7 +21,7 @@ const AddToBasketButton = ({ product, disabled }: AddToBasketButtonProps) => {
 	if (!isClient) {
 		return null;
 	}
-	return <div className="flex flex-col items-center justify-center space-4 gap-5 shadow-lg p-5 rounded-lg bg-green-50">
+	return <div className="flex flex-col items-center justify-center space-4 gap-5 shadow-lg p-5 rounded-lg bg-green-50 dark:bg-gray-400">
 			<span className="text-gray-600 font-semibold">Add to Basket</span>
 			<div className="flex items-center justify-center space-x-2">
 				<Button onClick={() => removeItem(product._id)} className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-200 ${itemCount === 0 ? "bg-gray-100 cursor-not-allowed" : "bg-gray-200 hover:bg-gray-300"}`} disabled={itemCount === 0 || disabled}>
